@@ -151,6 +151,8 @@ jobs:
 
       - name: Build Windows
         run: flutter build windows --release
+        env:
+          PUB_CACHE: ${{ github.workspace }}/.pub-cache
 
       - name: Compress Windows Bundle
         run: Compress-Archive -Path build\windows\x64\runner\release\* -DestinationPath ShonenX-Windows.zip
